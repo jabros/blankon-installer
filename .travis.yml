@@ -8,7 +8,7 @@ before_script:
 - sudo apt-get install -qq libsqlite3-dev libvala-0.30-dev valac-0.30 gobject-introspection
 - sudo apt-get install -qq libwebkitgtk-3.0-dev libgee-dev 
 - wget http://launchpadlibrarian.net/185318554/libparted-dev_3.2-6_amd64.deb
-- dpkg -i libparted-dev_3.2-6_amd64.deb
+- sudo dpkg -i libparted-dev_3.2-6_amd64.deb
 - ./autogen.sh
 - ./configure
 
