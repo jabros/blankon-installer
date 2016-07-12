@@ -22,12 +22,17 @@ if [ $? -eq 0 -a -x /usr/bin/blankon-installer ];then
     if [ -f /tmp/post-install.sh ];then
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         CDROMDEVICE=`cat /proc/sys/dev/cdrom/info | grep "drive name" | cut -d":" -f2 | tr -cd "[[:alnum:]]"`
         if [ "x$CDROMDEVICE" = "x$LIVEDEVICE" ];then
             /usr/bin/eject -m 
 =======
         CDROOMDEVICE=`cat /proc/sys/dev/cdrom/info | grep "drive name" | cut -d":" -f2 | tr -cd "[[:alnum:]]"`
         if [ $CDROOMDEVICE = $LIVEDEVICE ];then
+=======
+        CDROMDEVICE=`cat /proc/sys/dev/cdrom/info | grep "drive name" | cut -d":" -f2 | tr -cd "[[:alnum:]]"`
+        if [ "x$CDROMDEVICE" = "x$LIVEDEVICE" ];then
+>>>>>>> af18845e493164c87d999a4e69ca570354fba430
 
             # Create a systemd service to eject DVD after reboot
             cat << @@EOF > $ROOTFS/lib/systemd/system/eject.service
@@ -49,7 +54,11 @@ WantedBy=shutdown.target
 @@EOF
             # Enable it
             systemctl enable $ROOTFS/lib/systemd/system/eject.service
+<<<<<<< HEAD
 >>>>>>> a5b3466... Use systemd service to eject DVD.
+=======
+        
+>>>>>>> af18845e493164c87d999a4e69ca570354fba430
         fi
 
         # Do reboot

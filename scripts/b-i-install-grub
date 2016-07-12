@@ -17,7 +17,11 @@ fi
 
 # We don't have PATH within script execution yet dpkg requires it
 # So we set it here
+<<<<<<< HEAD
 export PATH=/bin:/usr/bin 
+=======
+export PATH=/bin:/usr/bin:/sbin 
+>>>>>>> af18845e493164c87d999a4e69ca570354fba430
 
 grep -v GRUB_CMDLINE_LINUX_DEFAULT /etc/default/grub > /tmp/grub
 mv /tmp/grub /target/etc/default/grub
